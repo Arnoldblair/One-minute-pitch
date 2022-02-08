@@ -1,0 +1,47 @@
+
+{% macro displayCategoryList(category_list) %}
+{% for category in category_list%}
+      <div>
+        <a href="{{url_for('.category',id=category.id)}}"><p>{{category.name|upper}}</p></a>
+      </div>
+
+  {% endfor %}
+{% endmacro %}
+
+{% macro displayPitches(pitch_list) %}
+{% for pitches in pitch_list %}
+<div class="col-md-12">
+  <div class="well">
+    <div class="row">
+      <p>{{pitches.name|upper}}</p></a>
+      <div class="col-md-10 col-sm-12">
+          <h3>{{pitches.content}}</h3>
+          <hr>
+          <h4>  <strong><span><a href=" {{url_for('.view_pitch',id=pitches.id)}}">Read comments</a></span></strong>  </h4>
+
+          <a href=" {{url_for('.post_comment',id=pitches.id)}}"><h4>Comments</h4></a>
+    </div>
+  </div>
+ </div>
+
+  </HISTORY> ..
+
+</div>
+{% endfor %}
+{% endmacro %}
+
+{% macro displaySpecificPitch(specific_pitch_list) %}
+{% for comment in specific_pitch_list %}
+  <div class="col-xs-12 col-sm-12 col-md-12 col-lg-12 ">
+      <hr>
+      <p style="color:rgba(0, 0, 0, 0)">{{comment.opinion}} </p>
+       <p style="text-align:right; color:#a5810b; font-size:10px;">{{comment.time_posted.strftime('%Y/%m/%d || %r') }}</p>
+  </div>
+{% endfor %}
+{% endmacro %}
+
+{% macro displayCategories(categories)%}
+{% for category in categories %}
+  <p>{{category.category_name}}</p>
+{% endfor %}
+{% endmacro %}
