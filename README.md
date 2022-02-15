@@ -4,7 +4,7 @@ This project was generated with python 3.8
 
 # Description
 
-An application that allows users to use that one minute wisely. The users will submit their one minute pitches and other users will vote on them and leave comments to give their feedback on them.
+An application that allows users to submit their one minute pitches and other users to vote on them and leave comments to give their feedback.
 
 # Setup/Installation Requirements
 * Clone the repo: 
