@@ -1,12 +1,10 @@
-
-
 from flask_script import Manager,Server
 from app import create_app,db #import db instance from app/__init__
 from app.models import User,Comment,Pitch #import User class from app/models file
 from flask_migrate import Migrate, MigrateCommand #initialize the migrate class
 
 #Creating app instance          
-app = create_app('production')
+app = create_app('development')
 # app = create_app('development')
 
 #Manager Commands

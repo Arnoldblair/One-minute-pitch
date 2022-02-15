@@ -1,13 +1,17 @@
+
 from token import COMMENT
-from app.main.forms import CommentForm
-from app.main.views import vote_count
+
+# from app.main.forms import CommentForm
 from . import db
 from werkzeug.security import generate_password_hash,check_password_hash
 from datetime import datetime
 from sqlalchemy.sql import func
 from flask_login import UserMixin
+from app import login_manager
 
-
+@login_manager.user_loader
+def load_user(user_id):
+    return User.query.get(user_id)
 
 class User(UserMixin,db.Model): #create 'User' class to help in creating new users
    
@@ -130,5 +134,5 @@ class Votes(db.Model):
 
     @classmethod
     def get_votes(cls,user_id,pitches_id):
-        votes = vote_count.query.filter_by(user_id=user_id, pitches_id=pitches_id).all()
-        return 
+        votes = Votes.query.filter_by(user_id=user_id, pitches_id=pitches_id).all()
+        return votes
