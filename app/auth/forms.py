@@ -6,11 +6,11 @@ from ..models import User
 
 #Registration Input Fields
 class RegistrationForm(FlaskForm): #Creating Registration form class
-    email = StringField('Your Email Address',validators=[Required(),Email()]) #input field email passing in required and email validators 
+    email = StringField('Email Address',validators=[Required(),Email()]) #input field email passing in required and email validators 
     username = StringField('Username',validators=[Required()]) #input username field
     password = PasswordField('Password',validators=[Required(),EqualTo('password_confirm',message="Passwords must match")]) #input password field
     password_confirm = PasswordField('Confirm Passwords',validators=[Required()]) #input password confirm field
-    submit = SubmitField('Sign Up')
+    submit = SubmitField('Create Account')
 
 
     #Creating methods. #Import ValidationError from wtforms
@@ -25,7 +25,7 @@ class RegistrationForm(FlaskForm): #Creating Registration form class
 
 #Login Input Fields 
 class LoginForm(FlaskForm):
-    email = StringField('Your Email Address',validators=[Required(),Email()])
+    email = StringField('Email Address',validators=[Required(),Email()])
     password = PasswordField('Password',validators=[Required()])
     remember = BooleanField('Remember me')
     submit = SubmitField('Sign In')
