@@ -23,7 +23,7 @@ python3 manage.py server
 ```
 ## Live link
 
-local-pitches.herokuapp.com/
+https://local-pitches.herokuapp.com/
 
 ## Technologies Used
 * Python
