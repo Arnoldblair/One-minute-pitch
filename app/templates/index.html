@@ -3,7 +3,7 @@
 
 {% block styles%}
     {{ super() }} <!--super() function tells Jinja not to override any code that is defined in the block-->
-    <link rel="stylesheet" href="{{url_for('static',filename='CSS/index.css')}}">
+    <link rel="stylesheet" href="{{('static/index.css')}}">
 {% endblock %}
 
 
@@ -20,6 +20,7 @@
 
             <br>
             <div class="col-md-6">
+              <h1><strong>Welcome to pitch zone</strong></h1>
             <p> In life you only have 60 seconds to impress someone. 1 minute to make or break you. How do we make sure that you use your 1 minute to actually say something meaningful? </p>
             </div>
         </div>
